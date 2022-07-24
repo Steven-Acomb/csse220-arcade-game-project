@@ -1,0 +1,9 @@
+Record your M2 progress (Date, Who, What has been done):
+
+
+1) I (Steve) completeted most of the discussed refactoring, creating the menu and game classes while moving most functionality to them.
+2) I (Steve) completed the MenuListener and GameListener classes & moved much remaining functionality there and to other non-"GameComponent" classes.
+3) I (Steve) also personally completed all of the requirements for Milestone 2.
+4) I (Steve) also manually scraped and prepared the graphics assets required for Milestone 2.
+5) I (Steve) also created UML diagrams for all of my work, and have now included previous ones from Milestones 1 & 2.
+...
