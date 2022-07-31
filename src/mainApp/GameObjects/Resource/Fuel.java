@@ -14,7 +14,7 @@ public class Fuel extends Resource {
 		this.appendSpritePath("ObjectiveResource");
 		this.initSprite();
 		this.updateSprite("fuel");
-		this.spawn(rand.nextInt(0, ArcadeGame.ZX_SPECTRUM_X_RESOLUTION - this.getSprite().getWidth()), this.getSpawnY());
+		this.spawn(rand.nextInt(ArcadeGame.ZX_SPECTRUM_X_RESOLUTION - this.getSprite().getWidth()), this.getSpawnY());
 		this.setTargetForDroppedObjects(true);
 		this.setCanBeCarried(true);
 		this.setScoreValue(25);
