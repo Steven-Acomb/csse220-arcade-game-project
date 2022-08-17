@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+        "Assets",
+        "levels"
+    ],
+    "java.dependency.syncWithFolderExplorer": true,
+    "java.dependency.packagePresentation": "hierarchical"
+}
