@@ -78,7 +78,6 @@ public class Menu extends JComponent{
 	 */
 	public void initMenu() throws IllegalFileFormatException {
 		this.menuListener = new MenuListener(this);
-//		this.currentGame = new Game(scaledJFrameSize.width,scaledJFrameSize.height,this.resolutionScale);
 		this.currentGame = new Game(screenSize, scaledJFrameSize, this.resolutionScale, this.isFullscreen);
 		this.addKeyListener(menuListener);
         this.setFocusable(true);

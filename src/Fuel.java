@@ -13,7 +13,6 @@ public class Fuel extends Resource {
 		this.setTargetForDroppedObjects(true);
 		this.setCanBeCarried(true);
 		this.setScoreValue(25);
-//		this.setCorporeality(true);
 	}
 	
 	public Fuel(double xPosition) {
@@ -24,17 +23,8 @@ public class Fuel extends Resource {
 		this.spawn(xPosition, this.getSpawnY());
 		this.setTargetForDroppedObjects(true);
 		this.setCanBeCarried(true);
-//		this.setCorporeality(true);
 		this.setScoreValue(25);
 	}
-
-//	public void respawn() {
-//		this.spawn(rand.nextInt(0, Jetpac.ZX_SPECTRUM_X_RESOLUTION - this.getSprite().getWidth()), this.getSpawnY());
-//		this.setCanBeCarried(true);
-//		this.setCorporeality(true);
-//		
-//		}
-	
 
 	public void collideWith(GameObject other) {
 
@@ -47,13 +37,7 @@ public class Fuel extends Resource {
 				this.setBeingCarried(true);
 			}
 
-		} 
-//		else if (other.isCorporeal() && !this.isCorporeal()) {
-//			if (this.getyPositionCurrent() >= other.getHeight() && !this.isCanBeCarried()) {
-//				
-//				this.respawn();
-//			}
-//		}
+		}
 
 		else if (other.isCorporeal()) {
 			double vY = this.getyVelocity();
@@ -74,13 +58,7 @@ public class Fuel extends Resource {
 			}
 		} else if (other.isTargetForDroppedObjects() && this.isBeingCarried()) {
 			this.setxPositionNext(other.getxPositionCurrent());
-			
-			
-			
-			
 			this.setBeingCarried(false);
-//			this.setCorporeality(false);
-
 		}
 
 	}

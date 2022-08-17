@@ -66,11 +66,7 @@ if(other.isCorporeal() && other.isDissapatesPlayerLasers()) {
 					if(deg == 0)
 						this.setAngleDegrees(180);
 					if(deg == 330)
-						this.setAngleDegrees(210);
-					
-				}
-				else {
-//					System.out.println("                    Detected clipping RIGHT");
+						this.setAngleDegrees(210);	
 				}
 			}
 			else if(((xN<=(xO+wO))&&(xC>=(xO+wO)))) {
@@ -84,12 +80,6 @@ if(other.isCorporeal() && other.isDissapatesPlayerLasers()) {
 					if(deg == 210)
 						this.setAngleDegrees(330);
 				}
-				else {
-//					System.out.println("                    Detected clipping LEFT");
-				}
-			}
-			else {
-//				System.out.println("                    No X-Axis Collision Detected");
 			}
 			
 			if((((yN+h)>=(yO))&&((yC+h)<=(yO)))) {
@@ -98,9 +88,6 @@ if(other.isCorporeal() && other.isDissapatesPlayerLasers()) {
 					this.setyVelocity(-vY);
 					this.setAngleDegrees(360-deg);
 				}
-				else {
-//					System.out.println("                    Detected clipping DOWN");
-				}
 			}
 			else if(((yN<=(yO+hO))&&(yC>=(yO+hO)))) {
 				if(vY<0) { //Detected collision UP
@@ -108,14 +95,7 @@ if(other.isCorporeal() && other.isDissapatesPlayerLasers()) {
 					this.setyVelocity(-vY);
 					this.setAngleDegrees(360-deg);
 				}
-				else {
-//					System.out.println("                    Detected clipping UP");
-				}
 			}
-			else {
-//				System.out.println("                    No Y-Axis Collision Detected");
-			}
-//			System.out.println(this.getAngleDegrees());
 			this.setSpriteForAngle();
 		}
 	}

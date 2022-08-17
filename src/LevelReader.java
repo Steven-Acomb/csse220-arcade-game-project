@@ -1,15 +1,10 @@
-
-
 import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.Scanner;
 
 /**
  * Class: LevelReader
  * 
- * @author freynejk <br>
+ * @author freynejk, largely recreated by acombsr <br>
  *         Purpose: Reads a level from file Restrictions: Only able to take in
  *         files in our format <br>
  *         For Example:
@@ -42,9 +37,7 @@ public class LevelReader {
 	public String readFile(String inputFile) throws IllegalFileFormatException {
 		Scanner scanner = null;
 		String lvlSet = "";
-		// File f1 = null;
 		InputStream f1 = this.getClass().getClassLoader().getResourceAsStream(inputFile);
-		// f1 = new File(inputFile);
 		try {
 			scanner = new Scanner(f1);
 			while (scanner.hasNextLine()) {
@@ -62,19 +55,17 @@ public class LevelReader {
 				scanner.close();
 		}
 		return " ";
-
-		// end try-catch
 	}
 
 	/**
 	 * Runs the ReadFile() Method with an input constructed from the current
 	 * numLevel and a folder address
+	 * Edit: refactored to use file name instead of path to make executable work
 	 * 
 	 * @return a single String that contains a Level's data
 	 * @throws IllegalFileFormatException
 	 */
 	public String runReadFiles() throws IllegalFileFormatException {
-		// String inputFile = "levels/level" + this.numLevel;
 		String inputFile = "level" + this.numLevel;
 		return readFile(inputFile);
 
@@ -100,7 +91,6 @@ public class LevelReader {
 		if(this.numLevel > 1)
 		this.numLevel = this.numLevel - 1;
 		this.runReadFiles();
-
 	}
 
 	/**

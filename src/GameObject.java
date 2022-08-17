@@ -62,7 +62,7 @@ public abstract class GameObject {
 	}
 
 	public void initSprite() {
-		this.setSpriteReader(new SpriteReader(this.getSpritePath()));
+		this.setSpriteReader(new SpriteReader());
 		this.updateSprite("default");
 	}
 
@@ -76,9 +76,6 @@ public abstract class GameObject {
 		this.setHeight(this.getSprite().getHeight());
 	}
 
-//	public abstract void update(); // TODO For J: Implement this in Enemy, Resource, Projectile, and Player.
-
-	// Implemented by Steve
 	public void update() {
 		if (!this.isToBeDeleted()) {
 			this.setxPositionCurrent(this.getxPositionNext());
@@ -88,72 +85,32 @@ public abstract class GameObject {
 		}
 	}
 
-//	public abstract void move(); // TODO For J: Implement this in Enemy, Resource, Projectile, and Player.
-
-	// Implemented by Steve.
 	public void move() {
 		this.setxPositionNext(this.getxPositionCurrent() + this.getxVelocity());
 		this.setyPositionNext(this.getyPositionCurrent() + this.getyVelocity());
 	}
 
-//	public abstract boolean overlapsWith(GameObject other); // TODO For J: Implement this in Enemy, Resource, Projectile, and Player.
-
-	// Implemented by Steve.
 	public boolean overlapsWith(GameObject other) {
 		double x = this.getxPositionCurrent();
 		double y = this.getyPositionCurrent();
 		int w = this.getWidth();
 		int h = this.getHeight();
-
 		double xO = other.getxPositionCurrent();
 		double yO = other.getyPositionCurrent();
 		int wO = other.getWidth();
 		int hO = other.getHeight();
-
 		boolean xOverlap = false;
 		boolean yOverlap = false;
-
-//			System.out.println("        Does "+this.getClass().toString()+" collide with " + other.getClass().toString() + "?");
-//			
-//			System.out.println("x = "+x+", y = "+y+", w = "+w+", h = "+h);
-//			System.out.println("xO = "+xO+", yO = "+yO+", wO = "+wO+", hO = "+hO);
-//			System.out.println("cX = "+cX+", cY = "+cY);
-//			System.out.println("cXO = "+cXO+", cYO = "+cYO);
-//			System.out.println("xRange = "+xRange+", yRange = "+yRange);
-
-//		boolean leftEdgeOverlapping = false;
-//		boolean rightEdgeOverlapping = false;
-//		boolean topEdgeOverlapping = false;
-//		boolean bottomEdgeOverlapping = false;
-//		
-//		if((xO<=x)&&(x<=xO+wO)) {
-//			leftEdgeOverlapping = true;
-//		}
-//		if((xO<=x+w)&&(x+w<=xO+wO)) {
-//			rightEdgeOverlapping = true;
-//		}
 		if ((xO <= x + w) && (x <= xO + wO)) {
 			xOverlap = true;
-//			System.out.println("x axis aligned");
 		}
-
-//		if((yO<=y)&&(y<=yO+hO)) {
-//			topEdgeOverlapping = true;
-//		}
-//		if((yO<=y+h)&&(y+h<=yO+hO)) {
-//			bottomEdgeOverlapping = true;
-//		}
 		if ((yO <= y + h) && (y <= yO + hO)) {
 			yOverlap = true;
-//			System.out.println("y axis aligned");
 		}
-
 		boolean result = (xOverlap && yOverlap);
-//			System.out.println("            result = " + result);
 		return result;
 	}
 
-//	@SuppressWarnings("null")
 	public void prepForDeletion() {
 		this.xPositionCurrent = 0;
 		this.yPositionCurrent = 0;
@@ -173,9 +130,6 @@ public abstract class GameObject {
 		this.updateSprite("nothing");
 	}
 
-//	public abstract void drawOn(Graphics2D graphics2, int resolutionScale); // TODO For J: Implement this in Enemy, Resource, Projectile, and Player.	
-
-	// implemented by Steve
 	public void drawOn(Graphics2D graphics2, int resolutionScale) {
 		Image scaledSprite = this.getSprite().getScaledInstance(this.getWidth() * resolutionScale,
 				this.getHeight() * resolutionScale, 0);

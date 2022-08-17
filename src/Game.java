@@ -51,10 +51,8 @@ public class Game {
     			game.update();
     		}
     		else if(e.getActionCommand().equals(GameListener.PAUSE_ACTION_COMMAND)) {
-//    			System.out.println("Game paused.");
     		}
     		else if(e.getActionCommand().equals(GameListener.UNPAUSE_ACTION_COMMAND)) {
-//    			System.out.println("Game unpaused.");
     		}
     		else if(e.getActionCommand().equals(GameListener.EXIT_ACTION_COMMAND)) {
     			game.exit();
@@ -184,7 +182,6 @@ public class Game {
 		//shoot
 		if(gameListener.isHeld(KeyEvent.VK_A))
 			this.currentGame.getPlayer().shoot();
-//			this.demoShooting();
 		
 		//advance level
 		if(gameListener.wasTapped(KeyEvent.VK_U))

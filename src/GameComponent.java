@@ -105,13 +105,9 @@ public class GameComponent extends JComponent{
 			}
 			else if (curChar =='R') {
 				this.gameObjects.add(new RocketPiece(column));
-//				this.gameObjects.add(new RocketPiece(column,"rocketMiddle"));
 				row += 8;
 			}
-//			else if (curChar =='r') {
-//				this.gameObjects.add(new RocketPiece(column,"rocketTop"));
-//				row += 8;
-//			}
+
 			else if (curChar == 'F') {
 				this.gameObjects.add(new Fuel(column));
 				row += 8;
@@ -119,7 +115,6 @@ public class GameComponent extends JComponent{
 			else if (curChar == 'L') {
 				this.setRocket(new Rocket(row,column,Rocket.FUEL_ONLY_LEVEL_FIRST_STAGE));
 				this.gameObjects.add(this.getRocket());
-//				this.gameObjects.add(rocket);
 				row+=8;
 			}
 			else if (curChar == 'T') {
@@ -179,7 +174,6 @@ public class GameComponent extends JComponent{
 	    if(this.isGameOver()) {
 	    	graphics2.setColor(Color.red);
 	    	graphics2.fillRect(-xOffset, -yOffset, this.screenSize.width, this.screenSize.height);
-//	    	graphics2.fillRect(0, 0, Jetpac.ZX_SPECTRUM_X_RESOLUTION*resolutionScale, Jetpac.ZX_SPECTRUM_Y_RESOLUTION*resolutionScale);
 			
 	    	graphics2.setColor(Color.white);
 			Font font1 = new Font("Purisa", Font.BOLD, 40*resolutionScale);

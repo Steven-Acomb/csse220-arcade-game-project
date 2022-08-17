@@ -4,8 +4,6 @@ import java.awt.Insets;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
-import java.io.File;
-
 /**
  * Class: ArcadeGame
  * @author S22_A_M01
@@ -16,8 +14,6 @@ public class ArcadeGame {
 	public static final int ZX_SPECTRUM_X_RESOLUTION = 256;
 	public static final int ZX_SPECTRUM_Y_RESOLUTION = 192;
 	public static final int DELAY = 10;
-
-	public static final File f = new File(ArcadeGame.class.getProtectionDomain().getCodeSource().getLocation().getPath());
 	
 	private Toolkit toolkit;
 	private Dimension screenSize;
@@ -116,7 +112,6 @@ public class ArcadeGame {
 	 */
 	public static void main(String[] args) throws IllegalFileFormatException {
  		ArcadeGame arcadeGame = new ArcadeGame();
-		System.out.println(f.getAbsolutePath());
 		arcadeGame.runApp();
 	}
 

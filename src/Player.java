@@ -110,7 +110,6 @@ public class Player extends GameObject {
 	}
 
 	public void determineSprite() {
-//		PlayerState previousState = this.movementState;
 		if (this.getyVelocity() < 0)
 			this.setGrounded(false);
 		if(this.inShip)
@@ -208,19 +207,10 @@ public class Player extends GameObject {
 			if((((xN+w)>=(xO))&&((xC+w)<=(xO)))) {
 				if(vX>0) //Detected collision RIGHT
 					this.setxPositionNext(xO-w);
-				else {
-//					System.out.println("                    Detected clipping RIGHT");
-				}
 			}
 			else if(((xN<=(xO+wO))&&(xC>=(xO+wO)))) {
 				if(vX<0) //Detected collision LEFT
 					this.setxPositionNext(xN = xO+wO);
-				else {
-//					System.out.println("                    Detected clipping LEFT");
-				}
-			}
-			else {
-//				System.out.println("                    No X-Axis Collision Detected");
 			}
 			
 			if((((yN+h)>=(yO))&&((yC+h)<=(yO)))) {
@@ -229,20 +219,11 @@ public class Player extends GameObject {
 					this.setyVelocity(0);
 					this.setGrounded(true);
 				}
-				else {
-//					System.out.println("                    Detected clipping DOWN");
-				}
 			}
 			else if(((yN<=(yO+hO))&&(yC>=(yO+hO)))) {
 				if(vY<0) //Detected collision UP
 					this.setyPositionNext(yO+hO);
-				else {
-//					System.out.println("                    Detected clipping UP");
-				}
-			}
-			else {
-//				System.out.println("                    No Y-Axis Collision Detected");
-			}		
+			}	
 		}
 	}
 	
@@ -279,10 +260,6 @@ public class Player extends GameObject {
 	}
 	
 	public boolean isInvincible() {
-//		if(invincible) 
-//			System.out.println("Player invincible!");
-//		else
-//			System.out.println("Player vulnerable.");
 		return invincible;
 	}
 
