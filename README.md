@@ -1,3 +1,5 @@
+by the way, we got an A+ lol
+
 # Using Git for Your Arcade Game Project
 
 For the arcade game project, you will be doing group development.
