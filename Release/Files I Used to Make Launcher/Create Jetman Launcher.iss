@@ -10,7 +10,7 @@
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{46C35C9A-22FD-4281-9955-C3ECE77D6FAC}
+AppId={{B14AE7C9-CB8F-4D24-8EB6-BD412731210D}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -22,9 +22,9 @@ DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\acomb\Desktop
-OutputBaseFilename=Jetman Launcher
-SetupIconFile=C:\Users\acomb\Desktop\Release\Jetman-Flying-Right.ico
+OutputDir=C:\Users\acomb\Documents\GitHub\csse220-arcade-game-project\Release
+OutputBaseFilename=Jetman Installer
+SetupIconFile=C:\Users\acomb\Documents\GitHub\csse220-arcade-game-project\Release\Files I Used to Make Launcher\Jetman-Flying-Right.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -36,8 +36,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\acomb\Desktop\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\acomb\Desktop\Release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\acomb\Documents\GitHub\csse220-arcade-game-project\Release\Files I Used to Make Launcher\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\acomb\Documents\GitHub\csse220-arcade-game-project\Release\Files I Used to Make Launcher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
